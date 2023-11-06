@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
+@CrossOrigin(maxAge = 3600, origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/directors")
 public class DirectorController {
