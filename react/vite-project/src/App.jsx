@@ -76,7 +76,7 @@ function App() {
                       <Route path="/movies" element={isLoggedIn ? <MoviesPage movies={ movies } onMovieCreated={ updateMoviesList }/> : <Navigate to="/login"/>} />
                       <Route path="/home" element={isLoggedIn ? <Home/> : <Navigate to="/login"/>} />
                       <Route path="/login" element={<Login onLogin={ handleLogin }/>} />
-                      <Route path="/register" element={Register}/>
+                      <Route path="/register" element={<Register />}/>
                   </Routes>
             </div>
         </Router>
