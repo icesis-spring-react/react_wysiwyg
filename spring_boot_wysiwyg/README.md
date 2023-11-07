@@ -9,6 +9,15 @@
 
 ## Cómo usar el proyecto
 
+### Base de datos
+
+Crear una base de datos
+
+```bash
+mysql -u root -p
+CREATE DATABASE asig3_compnet_db;
+```
+
 ### Ejecución
 
 Para usar el poryecto, basta con ejecutarlo desde el IDE de preferencia (IntlliJ preferiblemente). 
