@@ -60,3 +60,5 @@ Lo que nos entretuvo varias horas (Sino dias) fue la politica de CORS. Que con e
 ## Conclusiones. 
 
 Como conclusion de este trabajo nos llevamos que la seguridad y el hacer un projecto no es una tarea sencilla. Requiere de mucho compromiso, investigacion y sobre todo comprension. 
+
+**Nota importante:** Debido a que el token de JWT tiene un lapso de vigencia, a veces sucede que se vence ese tiempo después de un rato de haber iniciado sesión, lo que hace que dejen de funcionar las solicitudes al backend. Para solucionarlo, basta con recargar la página y volver a iniciar sesión.
