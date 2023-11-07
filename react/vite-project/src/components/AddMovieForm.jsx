@@ -8,7 +8,7 @@ export const AddMovieForm = ( { onMovieCreated } ) => {
     const [movieData, setMovieData] = useState({
         name: '',
         genre: '',
-        directorID: '',
+        directorId: '',
         releaseDate: '',
     });
 
@@ -36,7 +36,7 @@ export const AddMovieForm = ( { onMovieCreated } ) => {
                 setMovieData({
                     name: '',
                     genre: '',
-                    directorID: '',
+                    directorId: '',
                     releaseDate: '',
                 });
 
@@ -62,7 +62,7 @@ export const AddMovieForm = ( { onMovieCreated } ) => {
                     <input type="text" name="genre" value={ movieData.genre } onChange={ handleChange } ></input>
                     
                     <p>Ingrese el número de identificación del director de la película</p>
-                    <input type="number" name="directorID" value={ movieData.directorID } onChange={ handleChange } ></input>
+                    <input type="number" name="directorId" value={ movieData.directorId } onChange={ handleChange } ></input>
                     
                     <p>Ingrese la fecha de la película</p>
                     <input type="date" name="releaseDate" value={ movieData.releaseDate } onChange={ handleChange } ></input>
