@@ -11,3 +11,9 @@ Este repositorio tiene el fin de contener los archivos correspondientes a la asi
 - Sebastián Hidalgo
 - Sebastián García
 - Yuluka Gigante Muriel
+
+# Guia de Funcionamiento
+
+## Lo que se hizo
+
+
