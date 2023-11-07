@@ -1,12 +1,14 @@
 import { BrowserRouter as Router, Route, Link, Routes, Navigate } from 'react-router-dom';
 import './styles/App.css';
 import { useEffect, useState } from 'react';
+import { MoviesByDirectorTable } from './components/MoviesByDirectorTable';
+import DirectorsPage from './components/DirectorsPage';
 import MoviesPage from './components/MoviesPage';
 import Home from './components/Home';
 import APIRestService from './services/APIRestService';
+import Register from './components/Register';
 import Login from './components/Login';
 import LoginService from './services/LoginService';
-import Register from './components/Register';
 
 function App() {
     const [movies, setMovies] = useState([]);
@@ -24,6 +26,12 @@ function App() {
             }).catch(error => {
                 console.log(error);
             });
+
+            APIRestService.getAllDirectors().then(response =>{
+                setDirectors(response.data);
+            }).catch(error => {
+                console.log(error);
+            });
         }
     }, [isLoggedIn]);
 
@@ -38,6 +46,21 @@ function App() {
 
                 const response = await APIRestService.getAllMovies();
                 setMovies(response.data);
+            } catch (error) {
+                console.error('Error actualizando la lista de películas')
+            }
+        } else {
+            console.error('No estás logeado aún');
+        }
+    }
+
+    const updateDirectorsList = async () => {
+        if (isLoggedIn) {
+            try {
+                LoginService.setAuthHeader();
+
+                const response = await APIRestService.getAllDirectors();
+                setDirectors(response.data);
             } catch (error) {
                 console.error('Error actualizando la lista de películas')
             }
@@ -73,10 +96,12 @@ function App() {
                   </nav>
           
                   <Routes>
+                      <Route path="/directors" element={isLoggedIn ? <DirectorsPage directors={ directors } onDirectorCreated={ updateDirectorsList }/> : <Navigate to="/login"/>} />
                       <Route path="/movies" element={isLoggedIn ? <MoviesPage movies={ movies } onMovieCreated={ updateMoviesList }/> : <Navigate to="/login"/>} />
+                      <Route path="/movies-by-director" element={isLoggedIn ? <MoviesByDirectorTable directors={ directors } movies={ movies }/> : <Navigate to="/login"/>} />
                       <Route path="/home" element={isLoggedIn ? <Home/> : <Navigate to="/login"/>} />
+                      <Route path="/register" element={<Register/>} />
                       <Route path="/login" element={<Login onLogin={ handleLogin }/>} />
-                      <Route path="/register" element={<Register />}/>
                   </Routes>
             </div>
         </Router>
