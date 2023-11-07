@@ -19,39 +19,39 @@ Este repositorio tiene el fin de contener los archivos correspondientes a la asi
 
 Cuando iniciamos la aplicacion, lo primero que nos envia es la pantalla del Login
 
-![Alt text](Login.png)
+![Alt text](media/Login.png)
 
 Una vez logueados con cualquier usuario existente, Accedemos al menu Home.
 
-![Alt text](Home.png)
+![Alt text](media/Home.png)
 
 Una vez aqui, podemos acceder a las demas funciones del codigo. Como por ejemplo registrar otro usuario del sistema.
 
-![Alt text](Register.png)
+![Alt text](media/Register.png)
 
 Crear y ver los directores
 
-![Alt text](DirectorCreate.png)
+![Alt text](media/DirectorCreate.png)
 
 Eliminar o Actualizar los existentes
 
-![Alt text](DirectorDeleteUpdate1.png)
+![Alt text](media/DirectorDeleteUpdate1.png)
 
-![Alt text](DirectorDeleteUpdate2.png)
+![Alt text](media/DirectorDeleteUpdate2.png)
 
 Crear y ver peliculas existentes
 
-![Alt text](CreateMovie.png)
+![Alt text](media/CreateMovie.png)
 
 O modificarlas y eliminarlas.
 
-![Alt text](DeleteUpdateMovie1.png)
+![Alt text](media/DeleteUpdateMovie1.png)
 
-![Alt text](DeleteUpdateMovie2.png)
+![Alt text](media/DeleteUpdateMovie2.png)
 
 ## Lo que falto por hacer.
 
-Tenemos un par de bugs en el codigo, pero nada que impida su correcto funcionamiento. 
+El unico problema que tenemos es que en las fechas no se muestra correctamente la fecha indicada. Y quisieramos haberle puesto un mejor estilo 
 
 ## Las dificultades que tuvimos. 
 
