@@ -7,6 +7,12 @@ export const SearchMovie = () => {
     const [foundMovie, setFoundMovie] = useState(null);
     const [notFoundMovie, setNotFoundMovie] = useState(false);
 
+    const formatDate = (timestamp) => {
+        const date = new Date(timestamp);
+
+        return date.toLocaleDateString();
+    };
+
     const handleChange = (e) => {
         setMovieID(e.target.value);
     };
@@ -69,7 +75,7 @@ export const SearchMovie = () => {
                         <p>Nombre: {foundMovie.name}</p>
                         <p>Género: {foundMovie.genre}</p>
                         <p>ID del director: {foundMovie.directorID}</p>
-                        <p>Fecha de estreno: {foundMovie.releaseDate}</p>
+                        <p>Fecha de estreno: {formatDate(foundMovie.releaseDate)}</p>
                     </div>
                 )}
             </div>

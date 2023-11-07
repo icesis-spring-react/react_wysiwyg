@@ -1,6 +1,12 @@
 import "../styles/MoviesTable.css";
 
 function MoviesTable(props) {
+    const formatDate = (timestamp) => {
+        const date = new Date(timestamp);
+
+        return date.toLocaleDateString();
+    };
+
     return (
         <div className="movies-table">
             <h2>Películas</h2>
@@ -24,7 +30,7 @@ function MoviesTable(props) {
                                     <td>{ movie.name }</td>
                                     <td>{ movie.genre }</td>
                                     <td>{ movie.directorId }</td>
-                                    <td>{ movie.releaseDate }</td>
+                                    <td>{ formatDate(movie.releaseDate) }</td>
                                 </tr>
                             );
                         })
