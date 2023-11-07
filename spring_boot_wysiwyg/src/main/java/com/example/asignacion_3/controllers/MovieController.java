@@ -16,7 +16,6 @@ public class MovieController {
     @Autowired
     private MovieService movieServices;
 
-
     @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/all")
     public ArrayList<Movie> getMovies() {
