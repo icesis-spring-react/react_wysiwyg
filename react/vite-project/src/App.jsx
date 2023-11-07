@@ -6,6 +6,7 @@ import Home from './components/Home';
 import APIRestService from './services/APIRestService';
 import Login from './components/Login';
 import LoginService from './services/LoginService';
+import Register from './components/Register';
 
 function App() {
     const [movies, setMovies] = useState([]);
@@ -75,6 +76,7 @@ function App() {
                       <Route path="/movies" element={isLoggedIn ? <MoviesPage movies={ movies } onMovieCreated={ updateMoviesList }/> : <Navigate to="/login"/>} />
                       <Route path="/home" element={isLoggedIn ? <Home/> : <Navigate to="/login"/>} />
                       <Route path="/login" element={<Login onLogin={ handleLogin }/>} />
+                      <Route path="/register" element={<Register />}/>
                   </Routes>
             </div>
         </Router>
