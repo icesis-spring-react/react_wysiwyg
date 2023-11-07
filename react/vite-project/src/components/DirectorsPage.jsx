@@ -25,6 +25,8 @@ function DirectorsPage(props) {
             <UpdateDirector onDirectorUpdated={ onDirectorCreated }/>
 
             <hr/>
+
+            <SearchDirector/>
         </div>
     );
 }

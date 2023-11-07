@@ -71,6 +71,12 @@ class APIRestService {
 
         return axios.get(url);
     }
+
+    getMoviesByDirector(directorID) {
+        const url = `${BASE_DIRECTORS_API_REST_URL}/${directorID}/movies`;
+        
+        return axios.get(url);
+    }
 }
 
 export default new APIRestService();
