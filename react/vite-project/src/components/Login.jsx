@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import LoginService from '../services/LoginService';
 import "../styles/Login.css";
-import App from '../App';
+import { Navigate } from 'react-router';
 
 export const Login = ( { onLogin } ) => {
     const [credentials, setCredentials] = useState({
         username: "",
         password: ""
     });
+
+    const [isLoggedIn, setLoggedIn] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -26,7 +28,7 @@ export const Login = ( { onLogin } ) => {
                 // console.log('TOKEN GUARDADO: ', LoginService.getToken());
 
                 onLogin(true);
-
+                setLoggedIn(true);
             } else {
                 console.log('Error en el login');
             }
@@ -34,6 +36,10 @@ export const Login = ( { onLogin } ) => {
             console.log('Error al procesar la solicitud: ', error);
         }
     };
+
+    if (isLoggedIn) {
+        return <Navigate to="/home"/>
+    }
 
     return (
         <div className="login-div">

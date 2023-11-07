@@ -1,10 +1,36 @@
 import axios from "axios";
 
-const BASE_API_REST_URL = "http://localhost:8080/movies/all";
+const BASE_MOVIE_API_REST_URL = "http://localhost:8080/movies";
 
 class APIRestService {
     getAllMovies() {
-        return axios.get(BASE_API_REST_URL);
+        const url = `${BASE_MOVIE_API_REST_URL}/all`;
+
+        return axios.get(url);
+    }
+
+    addMovie(movieData) {
+        const url = `${BASE_MOVIE_API_REST_URL}/add`;
+
+        return axios.post(url, movieData);
+    }
+
+    deleteMovie(movieID) {
+        const url = `${BASE_MOVIE_API_REST_URL}/delete/${movieID}`;
+        
+        return axios.delete(url);
+    }
+
+    updateMovie(movieID, updatedData) {
+        const url = `${BASE_MOVIE_API_REST_URL}/update/${movieID}`;
+
+        return axios.put(url, updatedData);
+    }
+
+    getMovieBy(movieID) {
+        const url = `${BASE_MOVIE_API_REST_URL}/${movieID}`;
+
+        return axios.get(url);
     }
 }
 
