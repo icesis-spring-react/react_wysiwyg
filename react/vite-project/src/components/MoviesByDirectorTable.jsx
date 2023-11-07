@@ -9,6 +9,12 @@ export const MoviesByDirectorTable = () => {
     const [directorID, setDirectorId] = useState("");
     const [filteredMovies, setFilteredMovies] = useState([]);
 
+    const formatDate = (timestamp) => {
+        const date = new Date(timestamp);
+
+        return date.toLocaleDateString();
+    };
+
     const handleChangeId = (e) => {
         setDirectorId(e.target.value);
     };
@@ -71,8 +77,8 @@ export const MoviesByDirectorTable = () => {
                                             <td>{ movie.id }</td>
                                             <td>{ movie.name }</td>
                                             <td>{ movie.genre }</td>
-                                            <td>{ movie.directorID }</td>
-                                            <td>{ movie.releaseDate }</td>
+                                            <td>{ movie.directorId }</td>
+                                            <td>{ formatDate(movie.releaseDate) }</td>
                                         </tr>
                                     );
                                 })
